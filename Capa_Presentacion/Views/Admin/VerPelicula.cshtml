@@ -1,9 +1,7 @@
-﻿
+﻿@model IEnumerable<Capa_Entidad.ListarPelicula_Result>
 
-@{
-    ViewBag.Title = "VerPelicula";
-    Layout = "~/Views/Shared/_Plantilla.cshtml";
-}
+@{ ViewBag.Title = "VerPelicula";
+    Layout = "~/Views/Shared/_Plantilla.cshtml"; }
 
 @*<h2>VerPelicula</h2>
 
@@ -164,18 +162,8 @@
         <br /> <br />
         <div>
             <a class="btn btn-info btn-lg" style="width:48%; background:#0026ff;" href="~/Admin/CrearPelicula"> <i class="fa fa-plus" aria-hidden="true"></i> <b>Agregar Nueva Pelicula</b> </a>
-
-
-
         </div>
-
-
         <br /> <br />
-
-
-        @model IEnumerable<Capa_Entidad.ListarPelicula_Result>
-
-
         <div class="table-responsive">
 
             <table class="table table-striped jambo_table bulk_action " id="tablabuscar">
@@ -202,44 +190,31 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                    <tr style="text-align:center; font-size:18px;">
+        <tr style="text-align:center; font-size:18px;">
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Titulo)
-                        </td>
-                        <td colspan="1">
-                            @Html.DisplayFor(modelItem => item.Nombre_Genero)
-                        </td>
-                        <td colspan="1">
-                            @Html.DisplayFor(modelItem => item.Nombre_Completo)
-                        </td>
-                        <td colspan="1">
-                            @Html.DisplayFor(modelItem => item.FechaLanzamiento)
-                        </td>
-                        <td>
-                            <a class="btn btn-primary " style="width:50px; " href=@Url.Action("EditarPeli", "Admin",new { id = item.Id}) }><i class="glyphicon glyphicon-pencil"> </i> </a>
-                            <a class="btn btn-danger " style="width:50px; " href=@Url.Action(" EliminarPelicula", "Admin",new { id = item.Id}) }><i class="glyphicon glyphicon-remove-sign"> </i> </a>
-                            <a class="btn btn-success " style="width:50px; " href=@Url.Action("DetallesPelicula", "Admin",new { id = item.Id}) }><i class="fa fa-info-circle"> </i> </a>
-                        </td>
-                    </tr>
-                    }
-
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(modelItem => item.Nombre_Genero)
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(modelItem => item.Nombre_Completo)
+            </td>
+            <td colspan="1">
+                @Html.DisplayFor(modelItem => item.FechaLanzamiento)
+            </td>
+            <td>
+                <a class="btn btn-primary " style="width:50px; " href=@Url.Action("EditarPeli", "Admin",new { id = item.ID_Pelicula}) }><i class="glyphicon glyphicon-pencil"> </i> </a>
+                <a class="btn btn-danger " style="width:50px; " href=@Url.Action("EliminarPelicula", "Admin",new { id = item.ID_Pelicula}) }><i class="glyphicon glyphicon-remove-sign"> </i> </a>
+                <a class="btn btn-success " style="width:50px; " href=@Url.Action("DetallesPelicula", "Admin",new { id = item.ID_Pelicula}) }><i class="fa fa-info-circle"> </i> </a>
+            </td>
+        </tr>}
                 </tbody>
-
-
             </table>
-
-
-
         </div>
-
-
     </div>
-
-
 </div>
-
-
 @section scripts{
     <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script>

@@ -33,9 +33,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-
+                <div class="anime__details__btn">
+                    <a href="~/User/Index" class="follow-btn"><i class="fa fa-heart-o"></i>Regresar</a>
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
 </div>
 <!-- Breadcrumb End -->
@@ -92,7 +94,7 @@
                             </div>
                         </div>
                         <div class="anime__details__btn">
-                            <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
+                            
                             <a href="#myModal" class="watch-btn" data-toggle="modal">
                                 <span>Watch Now</span> <i class="fa fa-angle-right"></i>
                             </a>
@@ -107,7 +109,7 @@
     <div class="m-4">
         <!-- Modal HTML -->
         <div id="myModal" class="modal bd-example-modal-lg fade">
-            <div class="modal-dialog modal-lg modal-dialog-centered"">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <a> Trailer</a>
@@ -115,7 +117,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe  src="https://www.youtube.com/embed/llTkPK7YXGk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe  src="@Model.Media" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

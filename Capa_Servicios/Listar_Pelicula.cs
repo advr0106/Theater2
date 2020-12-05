@@ -19,10 +19,11 @@ namespace Capa_Servicios
         {
             return db.ListarUltimaPelicula().ToList();
         }
-        public static List<int?> ContarUsuarios()
+        /*public static List<int?> ContarUsuarios()
         {
             return db.CountUsuario().ToList();
-        }
+        }*/
+
         public static List<int?> ContarDirector()
         {
             return db.CountDirector().ToList();

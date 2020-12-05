@@ -17,7 +17,7 @@ using System;
 public partial class ListarUltimaPelicula_Result
 {
 
-    public int Id { get; set; }
+    public int ID_Pelicula { get; set; }
 
     public string Titulo { get; set; }
 

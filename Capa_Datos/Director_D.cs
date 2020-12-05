@@ -23,7 +23,7 @@ namespace Capa_Datos
         }
         public void EditarDirector(Director director)
         {
-            var i = db.Director.Find(director.Id);
+            var i = db.Director.Find(director.ID_Director);
             i.Nombre_Completo = director.Nombre_Completo;
             db.SaveChanges();
         }

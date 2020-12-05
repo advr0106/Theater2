@@ -1,9 +1,7 @@
 ﻿@model Capa_Entidad.Director
 
-@{
-    ViewBag.Title = "EliminarDirector";
-    Layout = "~/Views/Shared/_Admin.cshtml";
-}
+@{ ViewBag.Title = "EliminarDirector";
+    Layout = "~/Views/Shared/_Admin.cshtml"; }
 
 <h2>EliminarDirector</h2>
 
@@ -24,11 +22,10 @@
 
     @using (Html.BeginForm())
     {
-        @Html.AntiForgeryToken()
+@Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Eliminar Director" class="btn btn-danger"/> 
-            <a href="~/Director/ListarDirector" class="btn btn-success">Cancelar</a>
-        </div>
-    }
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar Director" class="btn btn-danger" />
+                    <a href="~/Director/ListarDirector" class="btn btn-success">Cancelar</a>
+                </div>}
 </div>

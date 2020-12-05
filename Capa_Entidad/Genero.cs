@@ -22,12 +22,12 @@ public partial class Genero
     public Genero()
     {
 
-        this.Peliculas = new HashSet<Pelicula>();
+        this.Pelicula = new HashSet<Pelicula>();
 
     }
 
 
-    public int Id { get; set; }
+    public int ID_Genero { get; set; }
 
     public string Nombre_Genero { get; set; }
 
@@ -35,7 +35,7 @@ public partial class Genero
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Pelicula> Peliculas { get; set; }
+    public virtual ICollection<Pelicula> Pelicula { get; set; }
 
 }
 

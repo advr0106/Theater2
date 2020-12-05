@@ -15,7 +15,7 @@
                                 <div class="label">@item.Nombre_Genero</div>
                                 <h2>@item.Titulo</h2>
                                 <p>@item.Sipnosis</p>
-                                <a href="@Url.Action("Detail", "User", new { id = item.Id })"><span>Ver Más detalles</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="@Url.Action("Detail", "User", new { id = item.ID_Pelicula })"><span>Ver Más detalles</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -36,33 +36,30 @@
                             </div>
                         </div>
                     </div>
-                    @foreach (var item in Model)
-                    {
-
-
-                        <div class="row">
-                            @{
-                                var r = new Random();
-                                var number1 = r.Next(100);
-                                var number2 = r.Next(1000);
-                            }
+                    <div class="row">
+                        @{
+                            var r = new Random();
+                        }
+                        @foreach (var item in Model)
+                        {
                             <div class="col-lg-2 col-md-4 col-sm-4">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="@item.Imagen">
                                         <div class="ep">@item.Duracion</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> @number1</div>
-                                        <div class="view"><i class="fa fa-eye"></i> @number2</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> @r.Next(100)</div>
+                                        <div class="view"><i class="fa fa-eye"></i> @r.Next(1000)</div>
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
                                             <li>Active</li>
                                             <li>Movie</li>
                                         </ul>
-                                        <h5><a href="@Url.Action("Detail", "User", new { id = item.Id })">@item.Titulo</a></h5>
+                                        <h5><a href="@Url.Action("Detail", "User", new { id = item.ID_Pelicula })">@item.Titulo</a></h5>
                                     </div>
                                 </div>
                             </div>
-                        </div>}
+                        }
+                    </div>
                 </div>
             </div>
         </div>

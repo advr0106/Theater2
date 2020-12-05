@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<Capa_Entidad.Director>
 
-@{
-    ViewBag.Title = "Director";
-    Layout = "~/Views/Shared/_Admin.cshtml";
-}
+@{ ViewBag.Title = "Director";
+    Layout = "~/Views/Shared/_Admin.cshtml"; }
 
 <div class="card">
     <h2>Lista de director</h2>
@@ -30,17 +28,17 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            <a class="item" data-toggle="tooltip" data-placement="top" title="Editar" href="@Url.Action("EditarDirector","Admin", new { id = item.Id })">
-                                <i data-feather="edit" class="feather-icon"></i>
-                            </a>
-                            <a class="item" data-toggle="tooltip" data-placement="top" title="Eliminar" href="@Url.Action("EliminarDirector","Admin", new { id = item.Id })">
-                                <i data-feather="delete" class="feather-icon"></i>
-                            </a>
-                        </td>
-                    </tr>
-                }
+    <tr>
+        <td>
+            <a class="item" data-toggle="tooltip" data-placement="top" title="Editar" href="@Url.Action("EditarDirector","Admin", new { id = item.ID_Director })">
+                <i data-feather="edit" class="feather-icon"></i>
+            </a>
+            <a class="item" data-toggle="tooltip" data-placement="top" title="Eliminar" href="@Url.Action("EliminarDirector","Admin", new { id = item.ID_Director })">
+                <i data-feather="delete" class="feather-icon"></i>
+            </a>
+        </td>
+    </tr>
+}
             </tbody>
         </table>
     </div>

@@ -11,14 +11,14 @@ namespace Capa_Datos
     {
         //Instancia 
         TheaterEntities db = new TheaterEntities();
-        
+
         public Loogin BuscarUser(string User, string Contrasena)
         {
             return db.Loogin.Where(i => i.Usuario == User && i.Contrasena == Contrasena).FirstOrDefault();
         }
         public void InsertarNuevoUser(Loogin login)
         {
-             db.Loogin.Add(login);
+            db.Loogin.Add(login);
             db.SaveChanges();
         }
     }

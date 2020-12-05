@@ -48,11 +48,6 @@ namespace Capa_Datos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("CountPelicula");
         }
     
-        public virtual ObjectResult<Nullable<int>> CountUsuario()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("CountUsuario");
-        }
-    
         public virtual ObjectResult<ListarPelicula_Result> ListarPelicula()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ListarPelicula_Result>("ListarPelicula");
@@ -61,6 +56,11 @@ namespace Capa_Datos
         public virtual ObjectResult<ListarUltimaPelicula_Result> ListarUltimaPelicula()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ListarUltimaPelicula_Result>("ListarUltimaPelicula");
+        }
+    
+        public virtual int CountUsuario()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CountUsuario");
         }
     }
 }

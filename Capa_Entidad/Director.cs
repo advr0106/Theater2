@@ -22,12 +22,12 @@ public partial class Director
     public Director()
     {
 
-        this.Peliculas = new HashSet<Pelicula>();
+        this.Pelicula = new HashSet<Pelicula>();
 
     }
 
 
-    public int Id { get; set; }
+    public int ID_Director { get; set; }
 
     public string Nombre_Completo { get; set; }
 
@@ -35,7 +35,7 @@ public partial class Director
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Pelicula> Peliculas { get; set; }
+    public virtual ICollection<Pelicula> Pelicula { get; set; }
 
 }
 
