@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla</title>
+
+    <link href="~/Layout_Pantalla/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Layout_Pantalla/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Layout_Pantalla/vendors/nprogress/nprogress.css" rel="stylesheet" />
+    <link href="~/Layout_Pantalla/build/css/custom.min.css" rel="stylesheet" />
+    @RenderSection("styles", required: false) @*Si quiero poner estilos adicionales desde donde lo heredan*@
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <br>
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"> <img style="width:40px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMS45OTk4MSA1MTEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTQ5OS45MDIzNDQgMjM2LjA2NjQwNmMtNy42NjQwNjMtNy4wNzAzMTItMTguMDg5ODQ0LTExLjQzNzUtMjguNjA1NDY5LTExLjk4NDM3NS0xMS45NDE0MDYtLjYxNzE4Ny0yMy4xMjg5MDYgMy42NDA2MjUtMzEuNDYwOTM3IDExLjk3NjU2M2wtNTYuOTI5Njg4IDU2LjMzMjAzMWMtMS4xMjUtMS45NDkyMTktMi40MTAxNTYtMy43ODkwNjMtMy44NTE1NjItNS40OTYwOTQtNy4wMDM5MDctOC4zMTY0MDYtMTcuMjQ2MDk0LTEyLjg5NDUzMS0yOC44MzU5MzgtMTIuODk0NTMxaC03OS42OTUzMTJjLTE1LjAyNzM0NCAwLTI5LjY4NzUtMS45NDkyMTktNDMuNTcwMzEzLTUuNzg5MDYyLTM2LjE5NTMxMy0xMC4wMTE3MTktNzAuNzczNDM3LTIuNjk5MjE5LTEwMC4wMDM5MDYgMjEuMTYwMTU2LTExLjg4NjcxOSA5LjcwMzEyNS0yMC41NTg1OTQgMjAuMjU3ODEyLTI2LjA0Mjk2OSAyNy45NTMxMjVsLTE0LjI4OTA2Mi0xMy44NjcxODhjLTEuODc4OTA3LTEuODI0MjE5LTQuNDI1NzgyLTIuODU5Mzc1LTcuMDQ2ODc2LTIuODU5Mzc1LS4wMjM0MzcgMC0uMDQyOTY4IDAtLjA2NjQwNiAwLTIuNzE0ODQ0LjAxOTUzMi01LjMzOTg0NCAxLjE0ODQzOC03LjIyMjY1NiAzLjEwMTU2M2wtNjkuNDY0ODQ0IDcyLjExMzI4MWMtMS44NTkzNzUgMS45Mjk2ODgtMi44NzEwOTM1IDQuNTIzNDM4LTIuODEyNDk5NzUgNy4yMDMxMjUuMDU4NTkzNzUgMi42ODM1OTQgMS4xNzk2ODc3NSA1LjIzMDQ2OSAzLjEyMTA5Mzc1IDcuMDc4MTI1bDExNy40ODgyODEgMTExLjg3MTA5NGMxLjk0OTIxOSAxLjg1NTQ2OCA0LjQ0OTIxOSAyLjc4MTI1IDYuOTQ1MzEzIDIuNzgxMjUgMi42MjEwOTQgMCA1LjI0MjE4Ny0xLjAxOTUzMiA3LjIxNDg0NC0zLjA0Mjk2OWw2OC44MTY0MDYtNzAuNjAxNTYzYzEuODc4OTA2LTEuOTI5Njg3IDIuOTIxODc1LTQuNTY2NDA2IDIuODcxMDk0LTcuMjYxNzE4LS4wNTA3ODItMi42NTYyNS0xLjE2NDA2My01LjIxODc1LTMuMDcwMzEzLTcuMDcwMzEzbC01Ljk5MjE4Ny01LjgxMjUgMTMuNzE0ODQzLTEuNTQyOTY5YzguMjk2ODc1LS45NjQ4NDMgMTYuNzM0Mzc1LTEuNDUzMTI0IDI1LjA4NTkzOC0xLjQ1MzEyNGgxMjEuMjUzOTA2YzE5LjcwMzEyNSAwIDM2LjQzNzUtNC4zMDg1OTQgNDkuNzQyMTg3LTEyLjgwODU5NC4xMDkzNzYtLjA3MDMxMy4yMTg3NS0uMTQ0NTMyLjMyODEyNi0uMjE4NzUgNC43NjU2MjQtMy4zMTI1IDkuMDg5ODQzLTcuMjM4MjgyIDEyLjg0NzY1Ni0xMS42NjQwNjNsODEuNzEwOTM3LTk2LjEyODkwNmMxMy45ODQzNzUtMTYuNDQ5MjE5IDEzLjEwOTM3NS0zNi45NzY1NjMtMi4xNzk2ODctNTEuMDc0MjE5em0tMzcyLjYwNTQ2OSAyNDQuNDQ5MjE5LTEwMi45NDUzMTMtOTguMDIzNDM3IDU1LjQ1NzAzMi01Ny41NzQyMTkgMTAyLjM0Mzc1IDk5LjMxNjQwNnptMzU5LjQzNzUtMjA2LjQyMTg3NS04MS43MTA5MzcgOTYuMTMyODEyYy0yLjU5Mzc1IDMuMDUwNzgyLTUuNTY2NDA3IDUuNzYxNzE5LTguODQzNzUgOC4wNTg1OTQtOS45ODgyODIgNi4zMjQyMTktMjMuMDE1NjI2IDkuNTM1MTU2LTM4LjcyNjU2MyA5LjUzNTE1NmgtMTIxLjI1NzgxM2MtOS4xMjEwOTMgMC0xOC4zNDM3NS41MzUxNTctMjcuMzcxMDkzIDEuNTg1OTM4bC0zMC4xNDg0MzggMy4zODI4MTItNjMuMTI1LTYxLjI1NzgxMmM0LjM4NjcxOS02LjUwMzkwNiAxMi40NTMxMjUtMTcuMDE1NjI1IDI0LjEzNjcxOS0yNi41NTQ2ODggMjQuMjg5MDYyLTE5LjgyODEyNCA1MS44NDM3NS0yNS42Njc5NjggODEuODk0NTMxLTE3LjM1MTU2MiAxNS42MzI4MTMgNC4zMjQyMTkgMzIuMDk3NjU3IDYuNTE5NTMxIDQ4Ljk0MTQwNyA2LjUxOTUzMWg3OS42OTUzMTJjMTQuMzEyNSAwIDE4LjEzMjgxMiAxMi4zOTg0MzggMTguMTMyODEyIDE5LjcyMjY1NyAwIDUuMzUxNTYyLTEuNzE4NzUgMTAuNDQ1MzEyLTQuNzE0ODQzIDEzLjk3NjU2Mi0zLjI1IDMuODI0MjE5LTcuODcxMDk0IDUuNzYxNzE5LTEzLjczNDM3NSA1Ljc2MTcxOWgtNjkuMzc1Yy01LjU2MjUgMC0xMC4wNzAzMTMgNC41MTE3MTktMTAuMDcwMzEzIDEwLjA3NDIxOXM0LjUwNzgxMyAxMC4wNzAzMTIgMTAuMDcwMzEzIDEwLjA3MDMxMmg2OS4zNzVjMTEuNzEwOTM3IDAgMjIuMDM5MDYyLTQuNTcwMzEyIDI5LjA4NTkzNy0xMi44NjcxODggNS44NjMyODEtNi44OTg0MzcgOS4yMDcwMzEtMTUuOTY4NzUgOS40ODgyODEtMjUuNjY0MDYybDY1LjU2NjQwNy02NC44Nzg5MDZjOS4zNzEwOTMtOS4zNzEwOTQgMjQuMDExNzE5LTcuMDE5NTMyIDMyLjIwMzEyNS41MzUxNTYgNC4yMzQzNzUgMy45MDYyNSA5LjkyOTY4NyAxMi4xMTMyODEuNDg4MjgxIDIzLjIxODc1em0wIDAiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0yNDkuMTE3MTg4IDM0MC45OTYwOTRjLTEuMjY5NTMyLTUuNDE3OTY5LTYuNjg3NS04Ljc3MzQzOC0xMi4xMDU0NjktNy41MDc4MTMtNS40MTQwNjMgMS4yNjk1MzEtOC43NzczNDQgNi42ODc1LTcuNTAzOTA3IDEyLjEwNTQ2OWwuMDkzNzUuNDEwMTU2YzEuMDg5ODQ0IDQuNjQwNjI1IDUuMjI2NTYzIDcuNzczNDM4IDkuNzk2ODc2IDcuNzczNDM4Ljc2MTcxOCAwIDEuNTM1MTU2LS4wODU5MzggMi4zMDg1OTMtLjI2NTYyNSA1LjQxNzk2OS0xLjI2OTUzMSA4Ljc3NzM0NC02LjY5MTQwNyA3LjUwNzgxMy0xMi4xMDU0Njl6bTAgMCIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTY4LjA3ODEyNSAyMTNoOTguMTQwNjI1YzUuMzQzNzUgMCAxMC4yODkwNjItMS43MzQzNzUgMTQuMzEyNS00LjY2NDA2MiA0LjAyMzQzOCAyLjkyOTY4NyA4Ljk2ODc1IDQuNjY0MDYyIDE0LjMxMjUgNC42NjQwNjJoOTguMTQ0NTMxYzUuMzQzNzUgMCAxMC4yODkwNjMtMS43MzQzNzUgMTQuMzEyNS00LjY2NDA2MiA0LjAyMzQzOCAyLjkyOTY4NyA4Ljk2ODc1IDQuNjY0MDYyIDE0LjMxMjUgNC42NjQwNjJoOTguMTQwNjI1YzEzLjQ0NTMxMyAwIDI0LjM4MjgxMy0xMC45NDE0MDYgMjQuMzgyODEzLTI0LjM4NjcxOXYtNDUuNzY1NjI1YzAtMjAuNTU0Njg3LTExLjUwMzkwNy0zOC40MTAxNTYtMjguNzIyNjU3LTQ3LjIxODc1IDguMzQzNzUtMTAuMDYyNSAxMy4zNjcxODgtMjIuOTY4NzUgMTMuMzY3MTg4LTM3LjAzMTI1IDAtMzIuMDM1MTU2LTI2LjA2MjUtNTguMDk3NjU2LTU4LjA5NzY1Ni01OC4wOTc2NTZzLTU4LjA5NzY1NiAyNi4wNjI1LTU4LjA5NzY1NiA1OC4wOTc2NTZjMCAxNC4wNjI1IDUuMDIzNDM3IDI2Ljk3MjY1NiAxMy4zNjcxODcgMzcuMDMxMjUtNy40NDE0MDYgMy44MTI1LTEzLjgxMjUgOS4zMTY0MDYtMTguNjUyMzQ0IDE1Ljk5MjE4OC00LjgzOTg0My02LjY3OTY4OC0xMS4yMTA5MzctMTIuMTgzNTk0LTE4LjY1NjI1LTE1Ljk5MjE4OCA4LjM0Mzc1LTEwLjA1ODU5NCAxMy4zNjcxODgtMjIuOTY4NzUgMTMuMzY3MTg4LTM3LjAzMTI1IDAtMzIuMDM1MTU2LTI2LjA2MjUtNTguMDk3NjU2LTU4LjA5NzY1Ny01OC4wOTc2NTYtMzIuMDM1MTU2IDAtNTguMDk3NjU2IDI2LjA2MjUtNTguMDk3NjU2IDU4LjA5NzY1NiAwIDE0LjA2MjUgNS4wMjczNDQgMjYuOTcyNjU2IDEzLjM3MTA5NCAzNy4wMzUxNTYtNy40NDUzMTIgMy44MDg1OTQtMTMuODE2NDA2IDkuMzEyNS0xOC42NTYyNSAxNS45OTIxODgtNC44Mzk4NDQtNi42Nzk2ODgtMTEuMjEwOTM4LTEyLjE4MzU5NC0xOC42NTYyNS0xNS45OTYwOTQgOC4zNDM3NS0xMC4wNTg1OTQgMTMuMzY3MTg4LTIyLjk2ODc1IDEzLjM2NzE4OC0zNy4wMjczNDQgMC0zMi4wMzkwNjItMjYuMDYyNS01OC4xMDE1NjItNTguMDk3NjU3LTU4LjEwMTU2Mi0zMi4wMzEyNSAwLTU4LjA5Mzc1IDI2LjA2MjUtNTguMDkzNzUgNTguMTAxNTYyIDAgMTQuMDU4NTk0IDUuMDIzNDM4IDI2Ljk2ODc1IDEzLjM2NzE4OCAzNy4wMzEyNS0xNy4yMTg3NSA4LjgwODU5NC0yOC43MjY1NjMgMjYuNjY3OTY5LTI4LjcyNjU2MyA0Ny4yMTg3NXY0NS43NjE3MTljMCAxMy40NDUzMTMgMTAuOTQxNDA2IDI0LjM4NjcxOSAyNC4zODY3MTkgMjQuMzg2NzE5em0zMDIuNjA5Mzc1LTE5Mi4zNTU0NjljMjAuOTI1NzgxIDAgMzcuOTUzMTI1IDE3LjAyMzQzOCAzNy45NTMxMjUgMzcuOTUzMTI1IDAgMjAuOTI1NzgyLTE3LjAyNzM0NCAzNy45NTMxMjUtMzcuOTUzMTI1IDM3Ljk1MzEyNS0yMC45Mjk2ODggMC0zNy45NTMxMjUtMTcuMDIzNDM3LTM3Ljk1MzEyNS0zNy45NTMxMjUtLjAwMzkwNi0yMC45Mjk2ODcgMTcuMDIzNDM3LTM3Ljk1MzEyNSAzNy45NTMxMjUtMzcuOTUzMTI1em0tMjYuMTY3OTY5IDg5LjgwMDc4MWM3Ljg3MTA5NCAzLjk4ODI4MiAxNi43NTc4MTMgNi4yNSAyNi4xNjQwNjMgNi4yNSA5LjQxMDE1NiAwIDE4LjI5Njg3NS0yLjI2MTcxOCAyNi4xNjQwNjItNi4yNSAxNS42NTIzNDQgMi43MjY1NjMgMjcuMTQ4NDM4IDE2LjIxNDg0NCAyNy4xNDg0MzggMzIuNDAyMzQ0djQ1Ljc2NTYyNWMwIDIuMzM5ODQ0LTEuOTAyMzQ0IDQuMjQyMTg4LTQuMjQyMTg4IDQuMjQyMTg4aC05OC4xNDA2MjVjLTIuMzM1OTM3IDAtNC4yMzgyODEtMS45MDIzNDQtNC4yMzgyODEtNC4yNDIxODh2LTQ1Ljc2NTYyNWMtLjAwMzkwNi0xNi4xODM1OTQgMTEuNDk2MDk0LTI5LjY3NTc4MSAyNy4xNDQ1MzEtMzIuNDAyMzQ0em0tMTAwLjYwMTU2Mi04OS44MDA3ODFjMjAuOTI1NzgxIDAgMzcuOTUzMTI1IDE3LjAyMzQzOCAzNy45NTMxMjUgMzcuOTUzMTI1IDAgMjAuOTI1NzgyLTE3LjAyNzM0NCAzNy45NTMxMjUtMzcuOTUzMTI1IDM3Ljk1MzEyNS0yMC45Mjk2ODggMC0zNy45NTMxMjUtMTcuMDIzNDM3LTM3Ljk1MzEyNS0zNy45NTMxMjUgMC0yMC45Mjk2ODcgMTcuMDIzNDM3LTM3Ljk1MzEyNSAzNy45NTMxMjUtMzcuOTUzMTI1em0tMjYuMTY0MDYzIDg5LjgwMDc4MWM3Ljg2NzE4OCAzLjk4ODI4MiAxNi43NTM5MDYgNi4yNSAyNi4xNjQwNjMgNi4yNSA5LjQxMDE1NiAwIDE4LjI5Mjk2OS0yLjI2MTcxOCAyNi4xNjQwNjItNi4yNSAxNS42NDg0MzggMi43MjY1NjMgMjcuMTQ4NDM4IDE2LjIxNDg0NCAyNy4xNDg0MzggMzIuNDAyMzQ0djQ1Ljc2NTYyNWMwIDIuMzM5ODQ0LTEuOTAyMzQ0IDQuMjQyMTg4LTQuMjQyMTg4IDQuMjQyMTg4aC05OC4xNDA2MjVjLTIuMzM5ODQ0IDAtNC4yNDIxODctMS45MDIzNDQtNC4yNDIxODctNC4yNDIxODh2LTQ1Ljc2NTYyNWMwLTE2LjE4MzU5NCAxMS41LTI5LjY3NTc4MSAyNy4xNDg0MzctMzIuNDAyMzQ0em0tMTAwLjYwNTQ2OC04OS44MDA3ODFjMjAuOTI1NzgxIDAgMzcuOTUzMTI0IDE3LjAyMzQzOCAzNy45NTMxMjQgMzcuOTUzMTI1IDAgMjAuOTI1NzgyLTE3LjAyNzM0MyAzNy45NTMxMjUtMzcuOTUzMTI0IDM3Ljk1MzEyNS0yMC45MjU3ODIgMC0zNy45NTMxMjYtMTcuMDI3MzQzLTM3Ljk1MzEyNi0zNy45NTMxMjUgMC0yMC45Mjk2ODcgMTcuMDI3MzQ0LTM3Ljk1MzEyNSAzNy45NTMxMjYtMzcuOTUzMTI1em0tNTMuMzEyNSAxMjIuMjAzMTI1YzAtMTYuMTgzNTk0IDExLjUtMjkuNjc1NzgxIDI3LjE0ODQzNy0zMi40MDIzNDQgNy44NzEwOTQgMy45ODgyODIgMTYuNzUzOTA2IDYuMjUgMjYuMTY0MDYzIDYuMjUgOS40MTAxNTYgMCAxOC4yOTI5NjgtMi4yNjE3MTggMjYuMTY0MDYyLTYuMjUgMTUuNjUyMzQ0IDIuNzI2NTYzIDI3LjE0ODQzOCAxNi4yMTQ4NDQgMjcuMTQ4NDM4IDMyLjQwMjM0NHY0NS43NjU2MjVjMCAyLjMzOTg0NC0xLjkwMjM0NCA0LjI0MjE4OC00LjI0MjE4OCA0LjI0MjE4OGgtOTguMTQwNjI1Yy0yLjMzOTg0NCAwLTQuMjQyMTg3LTEuOTAyMzQ0LTQuMjQyMTg3LTQuMjQyMTg4em0wIDAiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD48L2c+PC9zdmc+" /> </i> <span> RH Samy</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="~/Layout_Pantalla/images/user.png" alt="imagen del usuario" class="img-circle profile_img" />
+
+
+                        </div>
+                        <div class="profile_info">
+                            <span>bienvenido,</span>
+                            <h2>Admin</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="~/Admin/Index"><i class="fa fa-home"></i>Inicio</a></li>
+                                <br />
+                                <li>
+
+                                    <a><i class="fa fa-cogs"></i> Módulo Mantenimineto <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="~/Admin/VerPelicula" style="font-size:14px;">Peliculas</a></li>
+                                        <li><a href="~/Departamento/Index" style="font-size:14px;">Director</a></li>
+                                     
+                                    </ul>
+                                </li>
+                                <br />
+                                <li>
+                                    <a><i class="fa fa-tasks"></i>  Vista<span class="fa fa-eye"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#" style="font-size:14px;">  Vista Del Usuario </a></li>
+                                  
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                            <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/Layout_Pantalla/images/user.png" alt="">NOMBRE
+
+                                </a>
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="javascript:;"> Profile</a>
+                                    <a class="dropdown-item" href="javascript:;">
+                                        <span class="badge bg-red pull-right">50%</span>
+                                        <span>Settings</span>
+                                    </a>
+                                    <a class="dropdown-item" href="javascript:;">Help</a>
+                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                </div>
+                            </li>
+
+                            <li role="presentation" class="nav-item dropdown open">
+                                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">6</span>
+                                </a>
+                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="dropdown-item">
+                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span>
+                                                <span>John Smith</span>
+                                                <span class="time">3 mins ago</span>
+                                            </span>
+                                            <span class="message">
+                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="text-center">
+                                            <a class="dropdown-item">
+                                                <strong>See All Alerts</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- CONTENIDO -->
+            <div class="right_col" role="main">
+
+                @RenderBody()
+
+            </div>
+            <!-- /CONTENIDO -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    COPY
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="~/Layout_Pantalla/vendors/jquery/dist/jquery.min.js"></script>
+        <script src="~/Layout_Pantalla/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/Layout_Pantalla/vendors/nprogress/nprogress.js"></script>>
+        <script src="~/Layout_Pantalla/build/js/custom.min.js"></script>
+    </div>
+    @RenderSection("scripts", required: false)@*Si quiero poner JS adicionales desde donde lo heredan*@
+</body>
+</html>

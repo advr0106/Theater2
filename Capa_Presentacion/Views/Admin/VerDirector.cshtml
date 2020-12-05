@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Capa_Entidad.Director>
+
+@{
+    ViewBag.Title = "Director";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="card">
+    <h2>Lista de director</h2>
+
+    @section styles{
+        <link href="~/Content/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    }
+
+    <div class="table-responsive">
+        <table id="zero_config" class="table table-striped table-bordered no-wrap">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Nombre Completo
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a class="item" data-toggle="tooltip" data-placement="top" title="Editar" href="@Url.Action("EditarDirector","Admin", new { id = item.Id })">
+                                <i data-feather="edit" class="feather-icon"></i>
+                            </a>
+                            <a class="item" data-toggle="tooltip" data-placement="top" title="Eliminar" href="@Url.Action("EliminarDirector","Admin", new { id = item.Id })">
+                                <i data-feather="delete" class="feather-icon"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section  scripts{
+    <script src="~/Content/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/dist/js/pages/datatable/datatable-basic.init.js"></script>
+    <script>$('#zero_config').DataTable();</script>
+}

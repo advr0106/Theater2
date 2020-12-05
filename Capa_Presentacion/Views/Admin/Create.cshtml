@@ -1,0 +1,102 @@
+﻿@model Capa_Entidad.Empleado
+
+@{
+    ViewBag.Title = "Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<SelectListItem> DropDownListCargo = (List<SelectListItem>)ViewBag.DropDownListCargo;
+    List<SelectListItem> DropDownListDepartamento = (List<SelectListItem>)ViewBag.DropDownListDepartamento;
+}
+
+<h2>Empleado</h2>
+
+
+@using (Html.BeginForm("Create", "Empleados", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Crear empleado</h4>
+        <hr />
+        <div class="form-group">
+            <label class="col-md-4">Código del empleado:</label>
+            <div class="col-md-10">
+                <input name="Codigo_Empleado" id="Codigo_Empleado" type="number" class="form-control" required="required">
+                @Html.ValidationMessageFor(model => model.Codigo_Empleado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4">Nombre:</label>
+            <div class="col-md-10">
+                <input name="Nombre" id="Nombre" type="text" required="required" class="form-control" data-parsley-id="5">
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4">Apellido</label>
+            <div class="col-md-10">
+                <input name="Apellido" id="Apellido" type="text" required="required" class="form-control " data-parsley-id="5">
+                @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input name="Telefono" id="Telefono" type="text" required="required" class="form-control" data-parsley-id="5">
+                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">  
+            @*@Html.LabelFor(model => model.Id_Departamento, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            Seleccione El Departamento
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Id_Departamento, DropDownListDepartamento, "Seleccione un Departamento", new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Id_Departamento,"", new { @class = "text-danger" })
+            </div>  
+        </div>  
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Cargo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            Seleccione El Cargo
+            <div class="col-md-10"> 
+                @Html.DropDownListFor(model => model.Id_Cargo, DropDownListCargo, "Seleccione un Cargo", new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Id_Cargo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fecha_Ingreso, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" class="form-control" name="Fecha_Ingreso" id="Fecha_Ingreso" required="required">
+                @Html.ValidationMessageFor(model => model.Fecha_Ingreso, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Salario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Salario, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.Salario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $.validator.messages.required = "Este campo es requerido!";
+    </script>>
+}
